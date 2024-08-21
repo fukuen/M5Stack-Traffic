@@ -194,7 +194,7 @@ void latlon_to_pos(double lat, double lon, int zoom_level) {
 
 // https://bedeveloper.wordpress.com/a-c-program-to-fill-polygon-using-scan-line-fill-algorithm/
 void fillpoly(int x[], int y[], int n, int color) {
-  int gm, i, j, k;
+  int i, j, k;
   struct edge ed[MAX_EDGES], temped;
   float dx, dy, m[MAX_EDGES], x_int[MAX_EDGES], inter_x[MAX_EDGES];
   int ymax = -9999, ymin = 9999, yy, temp;
@@ -279,7 +279,7 @@ void fillpoly(int x[], int y[], int n, int color) {
     for (i = 0; i < n; i++) {
       if (ed[i].flag == 1) {
         if (yy == ed[i].y1) {
-          x_int[j] == ed[i].x1;
+          x_int[j] = ed[i].x1;
           j++;
           if (ed[i - 1].y1 == yy && ed[i - 1].y1 < yy) {
             x_int[j] = ed[i].x1;
